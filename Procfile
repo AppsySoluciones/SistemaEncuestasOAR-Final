@@ -1,0 +1,1 @@
+web: gunicorn sitemaencuestas.wsgi --log-file -

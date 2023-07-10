@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-9+y2ztt(l!@&m-2vb600rf2x-d5#yv2_v!7fqls*uvm#jk*!0j
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-#CSRF_TRUSTED_ORIGINS = [""]
+CSRF_TRUSTED_ORIGINS = ["https://web-production-19c9.up.railway.app"]
 
 
 # Application definition
@@ -126,10 +126,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-STATIC_URL = '/static/'
+STATIC_URL = '/staticfiles/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 #sprint(BASE_DIR)
