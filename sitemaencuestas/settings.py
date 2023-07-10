@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django_tables2',
     'bootstrap4',
+    'cloudinary_storage',
+    'cloudinary',
 
 ]
 
@@ -142,3 +144,9 @@ BACKEND_URL = 'http://127.0.0.1:8000'
 
 LOGIN_URL = 'login/'
 LOGIN_REDIRECT_URL = '/'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dhw5ymyo6',
+    'API_KEY': '679925653482314',
+    'API_SECRET': 'WfyOnmhrZft5PI5ohf2ivA2beZE'
+}
