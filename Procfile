@@ -1,1 +1,1 @@
-web: gunicorn sitemaencuestas.wsgi --log-dile -
+web: gunicorn sitemaencuestas.wsgi --log-file -
