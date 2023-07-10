@@ -1,0 +1,24 @@
+/* Estilo de la tabla */
+.table-style {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Estilo de las celdas de encabezado */
+.table-style th {
+background-color: #f2f2f2;
+border: 1px solid #ddd;
+padding: 8px;
+text-align: left;
+}
+
+/* Estilo de las celdas de datos */
+.table-style td {
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+/* Estilo para resaltar filas alternas */
+.table-style tr:nth-child(even) {
+background-color: #f9f9f9;
+}
