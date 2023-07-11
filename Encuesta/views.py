@@ -29,7 +29,7 @@ def home(request):
 
 #@login_required
 def formulario_registro(request):
-    if request.user.groups.filter(name='Registrar').exists():
+    if request.user.groups.filter(name__in=['Registrar,Administrar,Editar']).exists():
         if request.method == 'POST':
             form = EncuestaForm(request.POST)
             if form.is_valid():
