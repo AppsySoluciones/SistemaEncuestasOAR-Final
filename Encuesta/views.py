@@ -62,7 +62,7 @@ def exito_registro(request):
 @login_required
 def encuesta_list(request):
     user = request.user
-    if request.user.groups.filter(name__in=['Administrar','Editar']).exists():
+    if request.user.groups.filter(name__in=['Administrar','Editar','Consultar']).exists():
         encuesta_filter = EncuestaFilter(request.GET, queryset=Encuesta.objects.all())
     elif request.user.groups.filter(name='Registrar').exists():
         encuesta_filter = EncuestaFilter(request.GET, queryset=Encuesta.objects.filter(usuario=user))
