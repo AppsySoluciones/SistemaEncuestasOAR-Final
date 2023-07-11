@@ -1,5 +1,17 @@
 {% load bootstrap4 %}
-
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/circular-std/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/libs/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/fontawesome/css/fontawesome-all.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/charts/chartist-bundle/chartist.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/charts/morris-bundle/morris.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/charts/c3charts/c3.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/flag-icon-css/flag-icon.min.css' %}">
+</head>
+<body>
 <h1>Confirmar eliminación de encuesta</h1>
 
 <p>¿Estás seguro de que deseas eliminar la siguiente encuesta?</p>
@@ -11,8 +23,10 @@
 
 <form method="post">
 {% csrf_token %}
-<button class="btn btn-danger" type="submit">Eliminar</button>
-<a href="{{URL_BACKEND}}/encuesta_list/ " class="btn btn-secondary">Cancelar</a>
+<button class="btn btn-primary" type="submit">Eliminar</button>
+<a href="{{URL_BACKEND}}/encuesta_list/ " class="btn btn-primary">Cancelar</a>
 </form>
 
-<a href="{{URL_BACKEND}}/encuesta_list/" class="btn btn-primary">Inicio</a> 
+<a href="{{URL_BACKEND}}/encuesta_list/" class="btn btn-primary">Inicio</a>
+
+</body>

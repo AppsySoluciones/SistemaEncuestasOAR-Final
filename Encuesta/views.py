@@ -104,10 +104,10 @@ def eliminar_encuesta(request, pk):
         if request.method == 'POST':
             encuesta.delete()
             # Redirigir a la página de éxito o hacer cualquier otra acción necesaria
-            return redirect('encuesta_list')
+            return redirect(f'{BACKEND_URL}/encuesta_list/')
         return render(request, 'eliminar_encuesta.html', {'encuesta': encuesta,'URL_BACKEND':BACKEND_URL})
     else:
-        return render(request, 'no_autorizado.html')
+        return render(request, 'no_autorizado.html', {'URL_BACKEND':BACKEND_URL})
     
 #@login_required
 def dashboard(request):
@@ -138,6 +138,8 @@ def dashboard(request):
 
         rural = Encuesta.objects.filter(zona='rural').count()
         urbano = Encuesta.objects.filter(zona='urbana').count()
+        if porcentaje_total == 0:
+            porcentaje_total = 1
         context = {
             'num_masculinos':round(num_masculinos*100/porcentaje_total),
             'num_femeninos':round(num_femeninos*100/porcentaje_total),
