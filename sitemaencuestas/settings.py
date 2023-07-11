@@ -138,7 +138,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-BACKEND_URL = 'http://3.17.207.204:8000'
+BACKEND_URL = 'http://web-production-19c9.up.railway.app'
 
 LOGIN_URL = 'login/'
 LOGIN_REDIRECT_URL = '/'
