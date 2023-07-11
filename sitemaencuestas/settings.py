@@ -62,7 +62,7 @@ ROOT_URLCONF = 'sitemaencuestas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['sitemaencuestas/templates'],
+        'DIRS': ['sitemaencuestas/sitemaencuestas/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,7 +138,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-BACKEND_URL = 'http://web-production-19c9.up.railway.app'
+BACKEND_URL = 'http://3.17.207.204:8080'
 
 LOGIN_URL = 'login/'
 LOGIN_REDIRECT_URL = '/'
