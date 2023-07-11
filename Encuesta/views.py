@@ -61,7 +61,8 @@ def exito_registro(request):
     return render(request, 'exito_registro.html')
 @login_required
 def encuesta_list(request):
-    encuesta_filter = EncuestaFilter(request.GET, queryset=Encuesta.objects.all())
+    user = request.user
+    encuesta_filter = EncuestaFilter(request.GET, queryset=Encuesta.objects.filter(usuario=user))
 
     # Aplica el filtro
     filtered_data = encuesta_filter.qs
