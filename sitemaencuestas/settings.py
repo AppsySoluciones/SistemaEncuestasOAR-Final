@@ -96,8 +96,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'PASSWORD': 'encuesta123',
-        'HOST': 'database-1.c6kmgxlgcn7x.us-east-2.rds.amazonaws.com',
-        'NAME': 'database-1',
+        'HOST': 'encuestas-basedatos.c6kmgxlgcn7x.us-east-2.rds.amazonaws.com',
+        'NAME': 'encuestadb',
         'USER': 'postgres',
         'PORT': '5432',
         }
