@@ -26,7 +26,7 @@ URL_SERVER = settings.BACKEND_URL
 
 class CustomLoginView(LoginView):
     template_name = 'pages/login.html'
-    success_url = 'encuesta_list/'
+    success_url = f'{URL_SERVER}/encuesta_list/'
     a =0
 
     def get_success_url(self):
@@ -35,7 +35,10 @@ class CustomLoginView(LoginView):
     def form_valid(self, form):
         # Realiza el inicio de sesión y redirige a la página de éxito
         self.request.session['username'] = form.cleaned_data['username']
-        return redirect(f'{URL_SERVER}/encuesta_list/')
+        user = form.get_user()
+        from django.contrib.auth import login
+        login(self.request, user)
+        return redirect(self.get_success_url())
 
     def form_invalid(self, form):
         # Maneja los errores si el formulario no es válido
@@ -44,7 +47,7 @@ class CustomLoginView(LoginView):
 def logout(request):
     if 'username' in request.session:
         del request.session['username']
-    return redirect(f'{URL_SERVER}login') 
+    return redirect(f'{URL_SERVER}/login') 
 
 
     

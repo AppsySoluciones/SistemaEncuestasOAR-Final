@@ -58,7 +58,7 @@ def formulario_registro(request):
 #@login_required
 def exito_registro(request):
     return render(request, 'exito_registro.html')
-
+@login_required
 def encuesta_list(request):
     encuesta_filter = EncuestaFilter(request.GET, queryset=Encuesta.objects.all())
 
@@ -73,7 +73,7 @@ def encuesta_list(request):
 
 #@login_required
 def editar_encuesta(request, pk):
-    if request.user.groups.filter(name='Editar').exists():
+    if request.user.groups.filter(name__in=['Administrar','Editar']).exists():
         encuesta = get_object_or_404(Encuesta, pk=pk)
         if request.method == 'POST':
             form = EncuestaForm(request.POST, instance=encuesta)
