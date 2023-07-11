@@ -62,7 +62,12 @@ def exito_registro(request):
 @login_required
 def encuesta_list(request):
     user = request.user
-    encuesta_filter = EncuestaFilter(request.GET, queryset=Encuesta.objects.filter(usuario=user))
+    if request.user.groups.filter(name__in=['Administrar','Editar']).exists():
+        encuesta_filter = EncuestaFilter(request.GET, queryset=Encuesta.objects.all())
+    elif request.user.groups.filter(name='Registrar').exists():
+        encuesta_filter = EncuestaFilter(request.GET, queryset=Encuesta.objects.filter(usuario=user))
+    else:
+        return render(request, 'no_autorizado.html')
 
     # Aplica el filtro
     filtered_data = encuesta_filter.qs
