@@ -42,7 +42,7 @@ class CustomLoginView(LoginView):
 
     def form_invalid(self, form):
         # Maneja los errores si el formulario no es válido
-        return self.render_to_response('/')
+        return redirect(f'{URL_SERVER}/login')
     
 def logout(request):
     if 'username' in request.session:

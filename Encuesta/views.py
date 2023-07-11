@@ -1,3 +1,4 @@
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Encuesta
 from .forms import EncuestaForm
@@ -189,3 +190,27 @@ def enviar_correo_cumpleanios(request):
 
 
 
+class CustomLoginView(LoginView):
+    template_name = 'pages/login.html'
+    success_url = f'{settings.BACKEND_URL}/encuesta_list/'
+    a =0
+
+    def get_success_url(self):
+        return self.success_url
+
+    def form_valid(self, form):
+        # Realiza el inicio de sesión y redirige a la página de éxito
+        self.request.session['username'] = form.cleaned_data['username']
+        user = form.get_user()
+        from django.contrib.auth import login
+        login(self.request, user)
+        return redirect(self.get_success_url())
+
+    def form_invalid(self, form):
+        # Maneja los errores si el formulario no es válido
+        return self.render_to_response('/')
+    
+def logout(request):
+    if 'username' in request.session:
+        del request.session['username']
+    return redirect(f'{settings.BACKEND_URL}/login') 
