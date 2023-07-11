@@ -62,7 +62,7 @@ ROOT_URLCONF = 'sitemaencuestas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['sitemaencuestas/sitemaencuestas/templates'],
+        'DIRS': ['sitemaencuestas/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
