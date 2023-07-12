@@ -91,8 +91,10 @@ def editar_encuesta(request, pk):
             print(form.errors)
         else:
             # Pasar los valores de "mesa" y "puesto" en el contexto
+            form = EncuestaForm(instance=encuesta)
+            form.initial['fecha_nacimiento'] = encuesta.fecha_nacimiento.strftime('%Y-%m-%d')  # Establecer el valor inicial de fecha_nacimiento
             context = {
-                'form': EncuestaForm(instance=encuesta),
+                'form': form,
                 'mesa_value': encuesta.mesa,
                 'puesto_value': encuesta.puesto,
             }
