@@ -29,7 +29,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="#">OMAR</a>
+                <img style="width:120px;height:70px;" class="logo-img" src="{% static 'assets/images/logooar.jpg' %}" alt="logo">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -50,7 +50,7 @@
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{% static 'assets/images/profile.png' %}" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
-                                    <h5 class="mb-0 text-white nav-user-name">{{user}} </h5>
+                                    <h5 class="mb-0 text-white nav-user-name">{{user.first_name}} </h5>
                                 </div>
 
                                 <a class="dropdown-item" href="{{URL_BACKEND}}/logout"><i class="fas fa-power-off mr-2"></i>Logout</a>
@@ -79,13 +79,13 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="{{URL_BACKEND}}/encuesta_list/" ><i class="fa fa-fw fa-user-circle"></i>Ir a mis registros </a>
+                                <a class="nav-link" href="{{URL_BACKEND}}/encuesta_list/" ><i class="fa fa-fw fa-table"></i>Ir a mis registros </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{URL_BACKEND}}/registro/" ><i class="fas fa-fw fa-chart-pie"></i>Crear registro</a>
+                                <a class="nav-link" href="{{URL_BACKEND}}/registro/" ><i class="fas fa-fw fa-clipboard-list"></i>Crear registro</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{URL_BACKEND}}/dashboard/"><i class="fas fa-fw fa-table"></i>Dashboard</a>
+                                <a class="nav-link" href="{{URL_BACKEND}}/dashboard/"><i class="fas fa-fw fa-chart-pie"></i>Dashboard</a>
                             </li>
                         </ul>
                     </div>

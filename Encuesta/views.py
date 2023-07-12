@@ -24,11 +24,11 @@ import datetime
 
 BACKEND_URL = settings.BACKEND_URL
 
-#@login_required(login_url=reverse_lazy('login'))
+@login_required(login_url=reverse_lazy('login'))
 def home(request):
     return render(request, 'index.html')
 
-#@login_required
+@login_required
 def formulario_registro(request):
     if request.user.groups.filter(name__in=['Registrar','Administrar','Editar']).exists():
         if request.method == 'POST':
@@ -56,7 +56,7 @@ def formulario_registro(request):
         return render(request, 'no_autorizado.html')
 
 
-#@login_required
+@login_required
 def exito_registro(request):
     return render(request, 'exito_registro.html')
 @login_required
@@ -78,7 +78,7 @@ def encuesta_list(request):
     return render(request, 'encuesta_list.html', {'table': table, 'encuesta_filter': encuesta_filter, 'URL_BACKEND': BACKEND_URL, 'today': date.today()})
 
 
-#@login_required
+@login_required
 def editar_encuesta(request, pk):
     if request.user.groups.filter(name__in=['Administrar','Editar']).exists():
         encuesta = get_object_or_404(Encuesta, pk=pk)
@@ -103,7 +103,7 @@ def editar_encuesta(request, pk):
 
 
 
-#@login_required
+@login_required
 def eliminar_encuesta(request, pk):
     if request.user.groups.filter(name='Administrar').exists():
         encuesta = get_object_or_404(Encuesta, pk=pk)
@@ -115,7 +115,7 @@ def eliminar_encuesta(request, pk):
     else:
         return render(request, 'no_autorizado.html', {'URL_BACKEND':BACKEND_URL})
     
-#@login_required
+@login_required
 def dashboard(request):
         # Definir los grupos de edad
         grupos_edad = [(18, 25), (26, 35), (36, 45), (46, 55), (56, 65), (66, 75), (76, 90)]

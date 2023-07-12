@@ -3,7 +3,7 @@ from django import forms
 from .models import Encuesta
 
 class EncuestaFilter(django_filters.FilterSet):
-    zona = django_filters.CharFilter(field_name='zona', label='Zona', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese la zona'}))
+    zona = django_filters.ChoiceFilter(field_name='zona', label='Zona',choices=(('urbana','Urbana'),('rural','Rural')), widget=forms.Select(attrs={'class': 'form-control'}))
     genero = django_filters.ChoiceFilter(field_name='genero', label='Género', choices=(('masculino','Masculino'),('femenino','Femenino')), widget=forms.Select(attrs={'class': 'form-control'}))
     barrio = django_filters.CharFilter(field_name='barrio', label='Barrio', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese el barrio'}))
     ciudad_votacion = django_filters.CharFilter(field_name='ciudad_votacion', label='Ciudad de votación', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese la ciudad de votación'}))

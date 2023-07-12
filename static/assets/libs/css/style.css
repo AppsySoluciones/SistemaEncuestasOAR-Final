@@ -319,7 +319,7 @@ input::-webkit-input-placeholder {
 }
 
 input:focus::-webkit-input-placeholder {
-    color: #5969ff !important;
+    color: #d6e8de !important;
 }
 
 textarea::-webkit-input-placeholder {
@@ -327,7 +327,7 @@ textarea::-webkit-input-placeholder {
 }
 
 textarea:focus::-webkit-input-placeholder {
-    color: #5969ff !important;
+    color: #d6e8de !important;
 }
 
 button.btn {}
@@ -1260,7 +1260,7 @@ Top Header
     padding: 13px 20px;
     font-size: 16px;
     line-height: 2;
-    color: #82849f;
+    color: #D2E4DA;
 }
 
 
@@ -1469,7 +1469,7 @@ Top Header
 .nav-user-name {}
 
 .nav-user-info {
-    background-color: #5969ff;
+    background-color: #1CAA65;
     line-height: 1.4;
     padding: 12px;
     color: #fff;
@@ -1639,7 +1639,7 @@ Left Navigation Sidebar
 
 .nav-left-sidebar {
     position: fixed;
-    width: 264px;
+    width: 197px;
     height: 100%;
     top: 60px;
     overflow: auto;
@@ -1805,7 +1805,7 @@ Leftsidebar - dark
 ------------------------- */
 
 .sidebar-dark {
-    background-color: #0C1E23;
+    background-color: #11693F;
     -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     -webkit-transition: all 0.3s ease;
@@ -1818,25 +1818,25 @@ Leftsidebar - dark
 }
 
 .sidebar-dark.nav-left-sidebar .nav-link i {
-    color: #7a80b4;
+    color: #D2E4DA;
 }
 
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-item {}
 
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link {
-    color: #7a80b4;
+    color: #D2E4DA;
 }
 
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link:focus,
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link:hover {
     color: #fff;
-    background-color: #242849;
+    background-color: #09351F;
     border-radius: 2px;
 }
 
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link:focus,
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link.active {
-    background-color: #242849;
+    background-color: #09351F;
     color: #fff;
     border-radius: 2px;
 }
@@ -1844,7 +1844,7 @@ Leftsidebar - dark
 .sidebar-dark.nav-left-sidebar .submenu .nav .nav-item .nav-link:hover {
     color: #fff;
     border-radius: 2px;
-    background-color: #242849;
+    background-color: #09351F;
 }
 
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-item .badge{
@@ -1944,7 +1944,7 @@ Container / Wrapper
     position: relative;
     left: 0;
     min-height: 870px !important;
-    margin-left: 264px;
+    margin-left: 200px;
 }
 
 .dashboard-content {

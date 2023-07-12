@@ -79,11 +79,13 @@
                   <td>
                     {% if user.is_authenticated%}
                       {% if user|has_group:"Editar" or user|has_group:"Administrar" %}
-                        <a href="{{URL_BACKEND}}/encuesta/editar/{{row.record.id}}/" class="btn btn-primary">Editar</a>
+                      <div class="button-container" style="padding: 10px;">
+                      <a href="{{URL_BACKEND}}/encuesta/editar/{{row.record.id}}/" class="btn btn-primary">Editar</a></div>
                       {% endif %}
                     {% endif %}
                     {% if user.is_authenticated and user|has_group:"Administrar" %}
-                    <a href="{{URL_BACKEND}}/encuesta/eliminar/{{row.record.id}}/" class="btn btn-primary">Borrar</a>
+                      <div class="button-container" style="padding: 10px;">
+                      <a href="{{URL_BACKEND}}/encuesta/eliminar/{{row.record.id}}/" class="btn btn-primary">Borrar</a></div>
                     {% endif %}
                   </td>
                   <td>
@@ -101,6 +103,11 @@
     </div>
   </div>
 </div></div>
+<!-- <div style="text-align: center;">
+  <a href="{{URL_BACKEND}}/encuesta_list/" class="btn btn-primary">Inicio</a>
+  <a href="{{URL_BACKEND}}/registro/" class="btn btn-primary">Registrar</a>
+</div> -->
+
 
 <script src="{% static 'assets/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
@@ -122,8 +129,7 @@
 <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
 <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
 
-<a href="{{URL_BACKEND}}/encuesta_list/" class="btn btn-primary">Inicio</a>
-<a href="{{URL_BACKEND}}/registro/" class="btn btn-primary">Registrar</a>
+
 
 
 
