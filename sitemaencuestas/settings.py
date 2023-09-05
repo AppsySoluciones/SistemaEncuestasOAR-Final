@@ -97,7 +97,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'PASSWORD': 'mauricio123',
         'HOST': 'mauriciobd.c6kmgxlgcn7x.us-east-2.rds.amazonaws.com',
-        'NAME': 'encuestadb',
+        'NAME': 'mauriciobd',
         'USER': 'postgres',
         'PORT': '5432',
         }
@@ -148,7 +148,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#BACKEND_URL = 'http://3.17.207.204:8080' 
+#BACKEND_URL = 'http://18.119.117.26:8080' 
 BACKEND_URL = 'http://127.0.0.1:8000' 
 
 LOGIN_URL = 'login/'
