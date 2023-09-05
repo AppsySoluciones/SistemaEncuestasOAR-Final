@@ -85,14 +85,14 @@ WSGI_APPLICATION = 'sitemaencuestas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-""" DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-} """
+}
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'PASSWORD': 'encuesta123',
@@ -101,7 +101,7 @@ DATABASES = {
         'USER': 'postgres',
         'PORT': '5432',
         }
-}
+}"""
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -148,7 +148,8 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-BACKEND_URL = 'http://3.17.207.204:8080' 
+#BACKEND_URL = 'http://3.17.207.204:8080' 
+BACKEND_URL = 'http://127.0.0.1:8000' 
 
 LOGIN_URL = 'login/'
 LOGIN_REDIRECT_URL = '/'
